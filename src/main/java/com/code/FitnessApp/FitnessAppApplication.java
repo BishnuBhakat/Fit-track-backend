@@ -1,0 +1,30 @@
+package com.code.FitnessApp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@SpringBootApplication
+public class FitnessAppApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FitnessAppApplication.class, args);
+	}
+	@Bean
+	public WebMvcConfigurer configure() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry reg) {
+				reg.addMapping("/**")
+//						.allowedOrigins("*")
+//						.allowedMethods("*")
+						.allowedOrigins("http://localhost:5173")
+						.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+						.allowedHeaders("*")
+						.allowCredentials(true);
+			}
+		};
+	}
+}
