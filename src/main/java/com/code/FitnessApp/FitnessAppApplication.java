@@ -18,8 +18,6 @@ public class FitnessAppApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry reg) {
 				reg.addMapping("/**")
-//						.allowedOrigins("*")
-//						.allowedMethods("*")
 						.allowedOrigins("http://localhost:5173")
 						.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
 						.allowedHeaders("*")
