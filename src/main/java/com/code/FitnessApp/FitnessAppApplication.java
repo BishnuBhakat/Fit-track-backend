@@ -18,7 +18,7 @@ public class FitnessAppApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry reg) {
 				reg.addMapping("/**")
-						.allowedOrigins("http://localhost:5173","https://fit-track-frontend.vercel.app/")
+						.allowedOrigins("http://localhost:5173","https://fit-track-frontend-bishnubhakats-projects.vercel.app/")
 						.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
 						.allowedHeaders("*")
 						.allowCredentials(true);
